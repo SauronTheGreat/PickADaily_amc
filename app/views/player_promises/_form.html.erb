@@ -1,0 +1,52 @@
+<%= content_for :head do %>
+<script type="text/javascript">
+    $(function() {
+    });
+</script>
+<% end %>
+
+<%= content_for :main_content do %>
+
+<%= form_for(@player_promise) do |f| %>
+<% if @player_promise.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@player_promise.errors.count, "error") %> prohibited this player_promise
+    from being saved:</h2>
+
+  <ul>
+    <% @player_promise.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+
+    <%= f.hidden_field :player_id,:value=>@player.id %>
+
+
+    <%= f.label :expected_return %><br/>
+    <%= f.text_field :expected_return %>
+    <br/><br/>
+
+    <%= f.label :max_risk %><br/>
+    <%= f.number_field :max_risk %>
+    <br/><br/>
+
+
+    <%= f.hidden_field :round_id,:value=>@round.id %>
+
+
+    <%= f.label :portfolio_management %><br/>
+    <%= f.select :portfolio_management,[true,false] %>
+    <br/><br/>
+
+<p><%= f.submit %></p>
+<% end %>
+<% end %>
+
+<%= content_for :navigation do %>
+<% end %>
+<%= content_for :footer do %>
+<% end %>

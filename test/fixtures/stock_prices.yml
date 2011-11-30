@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  round_id: 1
+  stock_id: 1
+  open: 1.5
+  high: 1.5
+  low: 1.5
+  close: 1.5
+
+two:
+  round_id: 1
+  stock_id: 1
+  open: 1.5
+  high: 1.5
+  low: 1.5
+  close: 1.5

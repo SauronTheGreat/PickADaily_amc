@@ -1,0 +1,12 @@
+
+<%= content_for :header do %>
+<h1>Editing client_earning</h1>
+<% end %>
+
+
+<%= render 'form' %>
+
+<%= content_for :extra do %>
+<%= link_to image_tag(icon("show"),:size=>"100x100"), @client_earning, :title=>'Show' %>
+<%= link_to image_tag(icon("back"),:size=>"100x100"), client_earnings_path, :title=>'Back' %>
+<% end %>

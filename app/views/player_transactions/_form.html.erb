@@ -1,0 +1,56 @@
+<%= content_for :head do %>
+<script type="text/javascript">
+    $(function() {
+    });
+</script>
+<% end %>
+
+<%= content_for :main_content do %>
+
+<%= form_for(@player_transaction) do |f| %>
+<% if @player_transaction.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@player_transaction.errors.count, "error") %> prohibited this player_transaction
+    from being saved:</h2>
+
+  <ul>
+    <% @player_transaction.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+    <%= f.label :player_id %><br/>
+    <%= f.number_field :player_id %>
+    <br/><br/>
+
+    <%= f.label :investment_type_id %><br/>
+    <%= f.number_field :investment_type_id %>
+    <br/><br/>
+
+    <%= f.label :investment_round_price_id %><br/>
+    <%= f.number_field :investment_round_price_id %>
+    <br/><br/>
+
+    <%= f.label :amount_invested %><br/>
+    <%= f.text_field :amount_invested %>
+    <br/><br/>
+
+    <%= f.label :date_transacted %><br/>
+    <%= f.date_select :date_transacted %>
+    <br/><br/>
+
+    <%= f.label :expected_date_of_return %><br/>
+    <%= f.date_select :expected_date_of_return %>
+    <br/><br/>
+
+<p><%= f.submit %></p>
+<% end %>
+<% end %>
+
+<%= content_for :navigation do %>
+<% end %>
+<%= content_for :footer do %>
+<% end %>

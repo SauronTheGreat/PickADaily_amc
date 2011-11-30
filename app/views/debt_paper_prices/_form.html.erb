@@ -1,0 +1,60 @@
+<%= content_for :head do %>
+<script type="text/javascript">
+    $(function() {
+    });
+</script>
+<% end %>
+
+<%= content_for :main_content do %>
+
+<%= form_for(@debt_paper_price) do |f| %>
+<% if @debt_paper_price.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@debt_paper_price.errors.count, "error") %> prohibited this debt_paper_price
+    from being saved:</h2>
+
+  <ul>
+    <% @debt_paper_price.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+    <%= f.label :round_id %><br/>
+    <%= f.number_field :round_id %>
+    <br/><br/>
+
+    <%= f.label :debt_paper_id %><br/>
+    <%= f.number_field :debt_paper_id %>
+    <br/><br/>
+
+    <%= f.label :debt_paper_date %><br/>
+    <%= f.date_select :debt_paper_date %>
+    <br/><br/>
+
+    <%= f.label :open %><br/>
+    <%= f.text_field :open %>
+    <br/><br/>
+
+    <%= f.label :high %><br/>
+    <%= f.text_field :high %>
+    <br/><br/>
+
+    <%= f.label :low %><br/>
+    <%= f.text_field :low %>
+    <br/><br/>
+
+    <%= f.label :close %><br/>
+    <%= f.text_field :close %>
+    <br/><br/>
+
+<p><%= f.submit %></p>
+<% end %>
+<% end %>
+
+<%= content_for :navigation do %>
+<% end %>
+<%= content_for :footer do %>
+<% end %>

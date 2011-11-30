@@ -1,0 +1,51 @@
+<%= content_for :head do %>
+<script type="text/javascript">
+    $(function() {
+    });
+</script>
+<% end %>
+
+<%= content_for :header do %>
+<% end %>
+
+<%= content_for :main_content do %>
+
+
+    <p>
+      <b>Name:</b>
+      <%= @simulation.name %>
+    </p>
+
+
+    <p>
+      <b>Student group:</b>
+      <%= @simulation.student_group_id %>
+    </p>
+
+    <p>
+      <b>Number of Rounds:</b>
+      <%= @simulation.no_of_rounds %>
+    </p>
+
+
+
+
+
+<% end %>
+<br/>
+<br/>
+<%= content_for :navigation do %>
+<% end %>
+
+<%= content_for :extra do %>
+<%= link_to image_tag(icon("edit"),:size=>"100x100"), edit_simulation_path(@simulation), :title=>'Edit' %>
+<%= link_to image_tag(icon("back"),:size=>"100x100"), simulations_path, :title=>'Back' %>
+    <% if !@simulation.initiated? %>
+    <%= link_to "Initialize Simulation",initiate_simulation_path(:simulation_id=>@simulation.id) %>
+        <% else %>
+      <%= link_to "Initialize Rounds",initiate_round_path(:simulation_id=>@simulation.id) %>
+        <% end   %>
+<% end %>
+
+<%= content_for :footer do %>
+<% end %>

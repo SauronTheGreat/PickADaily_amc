@@ -1,0 +1,63 @@
+<%= content_for :head do %>
+<script type="text/javascript">
+    $(function() {
+    });
+</script>
+<% end %>
+
+<%= content_for :header do %>
+<% end %>
+
+<%= content_for :main_content do %>
+
+
+    <p>
+      <b>Round:</b>
+      <%= @stock_price.round_id %>
+    </p>
+
+
+    <p>
+      <b>Stock:</b>
+      <%= @stock_price.stock_id %>
+    </p>
+
+
+    <p>
+      <b>Open:</b>
+      <%= @stock_price.open %>
+    </p>
+
+
+    <p>
+      <b>High:</b>
+      <%= @stock_price.high %>
+    </p>
+
+
+    <p>
+      <b>Low:</b>
+      <%= @stock_price.low %>
+    </p>
+
+
+    <p>
+      <b>Close:</b>
+      <%= @stock_price.close %>
+    </p>
+
+
+
+<% end %>
+<br/>
+<br/>
+<%= content_for :navigation do %>
+<% end %>
+
+<%= content_for :extra do %>
+<%= link_to image_tag(icon("edit"),:size=>"100x100"), edit_stock_price_path(@stock_price), :title=>'Edit' %>
+<%= link_to image_tag(icon("back"),:size=>"100x100"), stock_prices_path, :title=>'Back' %>
+<% end %>
+
+<%= content_for :footer do %>
+<% end %>

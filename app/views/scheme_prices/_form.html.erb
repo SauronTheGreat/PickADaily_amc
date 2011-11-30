@@ -1,0 +1,48 @@
+<%= content_for :head do %>
+<script type="text/javascript">
+    $(function() {
+    });
+</script>
+<% end %>
+
+<%= content_for :main_content do %>
+
+<%= form_for(@scheme_price) do |f| %>
+<% if @scheme_price.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@scheme_price.errors.count, "error") %> prohibited this scheme_price
+    from being saved:</h2>
+
+  <ul>
+    <% @scheme_price.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+    <%= f.label :round_id %><br/>
+    <%= f.number_field :round_id %>
+    <br/><br/>
+
+    <%= f.label :scheme_id %><br/>
+    <%= f.number_field :scheme_id %>
+    <br/><br/>
+
+    <%= f.label :price_date %><br/>
+    <%= f.date_select :price_date %>
+    <br/><br/>
+
+    <%= f.label :price %><br/>
+    <%= f.text_field :price %>
+    <br/><br/>
+
+<p><%= f.submit %></p>
+<% end %>
+<% end %>
+
+<%= content_for :navigation do %>
+<% end %>
+<%= content_for :footer do %>
+<% end %>

@@ -1,0 +1,2 @@
+module ClientEarningsHelper
+end

@@ -1,0 +1,2 @@
+module NewsCompaniesHelper
+end

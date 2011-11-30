@@ -1,0 +1,33 @@
+<%= content_for :main_content do %>
+
+    <table>
+
+      <tr>
+        <th>Round Number</th>
+        <th>
+
+        </th>
+      </tr>
+      <% @rounds.each do |round| %>
+          <tr>
+            <td>
+              <%= round.number %>
+
+            </td>
+            <% if !round.played? %>
+            <td>
+
+              <%= link_to  "Start Round",start_round_path(:round_id=>round.id)%>
+              <% break %>
+            </td>
+                <% else %>
+            <td>
+              <%= link_to "Close Round",close_round_path(:round_id=>round.id) %>
+            </td>
+                <% end %>
+          </tr>
+
+
+      <% end %>
+    </table>
+<% end %>

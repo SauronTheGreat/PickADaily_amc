@@ -1,0 +1,2 @@
+module PlayerPromisesHelper
+end

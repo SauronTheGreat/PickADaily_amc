@@ -1,0 +1,39 @@
+<%= content_for :head do %>
+<script type="text/javascript">
+    $(function() {
+    });
+</script>
+<% end %>
+
+<%= content_for :header do %>
+<% end %>
+
+<%= content_for :main_content do %>
+
+
+    <p>
+      <b>Simulation:</b>
+      <%= @round.simulation_id %>
+    </p>
+
+
+    <p>
+      <b>Number:</b>
+      <%= @round.number %>
+    </p>
+
+
+
+<% end %>
+<br/>
+<br/>
+<%= content_for :navigation do %>
+<% end %>
+
+<%= content_for :extra do %>
+<%= link_to image_tag(icon("edit"),:size=>"100x100"), edit_round_path(@round), :title=>'Edit' %>
+<%= link_to image_tag(icon("back"),:size=>"100x100"), rounds_path, :title=>'Back' %>
+<% end %>
+
+<%= content_for :footer do %>
+<% end %>

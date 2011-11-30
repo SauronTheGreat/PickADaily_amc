@@ -1,0 +1,68 @@
+<%= content_for :head do %>
+<script type="text/javascript">
+    $(function() {
+    });
+</script>
+<% end %>
+
+<%= content_for :header do %>
+<h1>Listing player_assessments</h1>
+<% end %>
+
+<%= content_for :main_content do %>
+<table>
+  <tr>
+
+    <th>Player</th>
+
+    <th>Return risk ratio</th>
+
+    <th>Promised vs actual return</th>
+
+    <th>Return</th>
+
+    <th>Deviation from philosophy</th>
+
+    <th>Fees vs return</th>
+
+    <th>Round</th>
+
+    <th></th>
+  </tr>
+
+<% @player_assessments.each do |player_assessment| %>
+  <tr>
+
+    <td><%= player_assessment.player_id %></td>
+
+    <td><%= player_assessment.return_risk_ratio %></td>
+
+    <td><%= player_assessment.promised_vs_actual_return %></td>
+
+    <td><%= player_assessment.return %></td>
+
+    <td><%= player_assessment.deviation_from_philosophy %></td>
+
+    <td><%= player_assessment.fees_vs_return %></td>
+
+    <td><%= player_assessment.round_id %></td>
+
+    <td>
+    <%= link_to image_tag(icon("show"),:size=>"64x64"), player_assessment, :title=>'Show' %>
+    <%= link_to image_tag(icon("edit"),:size=>"64x64"), edit_player_assessment_path(player_assessment), :title=>'Edit' %>
+    <%= link_to image_tag(icon("delete"),:size=>"64x64"), player_assessment, confirm: 'Are you sure?', method: :delete, :title=>'Delete' %>
+    </td>
+  </tr>
+<% end %>
+</table>
+<% end %>
+
+<br />
+<%= content_for :navigation do %>
+<% end %>
+<%= content_for :extra do %>
+<%= link_to image_tag('new_icon.png',:size=>"100x100"), new_player_assessment_path, :title=>"Add a player_assessment" %>
+<% end %>
+<%= content_for :footer do %>
+<% end %>
+

@@ -1,0 +1,12 @@
+
+<%= content_for :header do %>
+<h1>Editing player</h1>
+<% end %>
+
+
+<%= render 'form' %>
+
+<%= content_for :extra do %>
+<%= link_to image_tag(icon("show"),:size=>"100x100"), @player, :title=>'Show' %>
+<%= link_to image_tag(icon("back"),:size=>"100x100"), players_path, :title=>'Back' %>
+<% end %>

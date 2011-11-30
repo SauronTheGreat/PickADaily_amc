@@ -1,0 +1,44 @@
+<%= content_for :head do %>
+<script type="text/javascript">
+    $(function() {
+    });
+</script>
+<% end %>
+
+<%= content_for :main_content do %>
+
+<%= form_for(@gold_price) do |f| %>
+<% if @gold_price.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@gold_price.errors.count, "error") %> prohibited this gold_price
+    from being saved:</h2>
+
+  <ul>
+    <% @gold_price.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+    <%= f.label :price_date %><br/>
+    <%= f.date_select :price_date %>
+    <br/><br/>
+
+    <%= f.label :price %><br/>
+    <%= f.text_field :price %>
+    <br/><br/>
+
+    <%= f.label :round_id %><br/>
+    <%= f.number_field :round_id %>
+    <br/><br/>
+
+<p><%= f.submit %></p>
+<% end %>
+<% end %>
+
+<%= content_for :navigation do %>
+<% end %>
+<%= content_for :footer do %>
+<% end %>

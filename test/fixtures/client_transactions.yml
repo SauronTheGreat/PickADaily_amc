@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  client_id: 1
+  player_id: 1
+  investment_type_id: 1
+  investment_round_price_id: 1
+  amount_invested: 1.5
+  date_transacted: 2011-11-21
+  expected_date_of_return: 2011-11-21
+
+two:
+  client_id: 1
+  player_id: 1
+  investment_type_id: 1
+  investment_round_price_id: 1
+  amount_invested: 1.5
+  date_transacted: 2011-11-21
+  expected_date_of_return: 2011-11-21

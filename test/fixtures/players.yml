@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  student_group_user_id: 1
+  simulation_id: 1
+  played: false
+
+two:
+  student_group_user_id: 1
+  simulation_id: 1
+  played: false

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  round_id: 1
+  player_id: 1
+  management_fee: 1.5
+  carry_fee: 1.5
+
+two:
+  round_id: 1
+  player_id: 1
+  management_fee: 1.5
+  carry_fee: 1.5

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  round_id: 1
+  player_id: 1
+  client_id: 1
+  earning: 1
+  fee_payout: 1
+
+two:
+  round_id: 1
+  player_id: 1
+  client_id: 1
+  earning: 1
+  fee_payout: 1

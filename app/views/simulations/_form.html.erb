@@ -1,0 +1,50 @@
+<%= content_for :head do %>
+<script type="text/javascript">
+    $(function() {
+    });
+</script>
+<% end %>
+
+<%= content_for :main_content do %>
+
+<%= form_for(@simulation) do |f| %>
+<% if @simulation.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@simulation.errors.count, "error") %> prohibited this simulation
+    from being saved:</h2>
+
+  <ul>
+    <% @simulation.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+    <%= f.label :name %><br/>
+    <%= f.text_field :name %>
+    <br/><br/>
+
+    <%= f.label :student_group_id %><br/>
+    <%= f.select :student_group_id ,StudentGroup.all.collect{|sg|[sg.name,sg.id]}%>
+    <br/><br/>
+
+     <%= f.label :no_of_rounds %><br/>
+    <%= f.number_field :no_of_rounds %>
+    <br/><br/>
+
+        <%= f.hidden_field :facilitator_id,:value=>@facilitator.id %>
+        <%= f.hidden_field :initiated,:value=>false%>
+
+
+
+
+<p><%= f.submit %></p>
+<% end %>
+<% end %>
+
+<%= content_for :navigation do %>
+<% end %>
+<%= content_for :footer do %>
+<% end %>

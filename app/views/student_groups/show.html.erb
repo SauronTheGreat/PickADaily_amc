@@ -1,0 +1,40 @@
+<%= content_for :head do %>
+<script type="text/javascript">
+    $(function() {
+    });
+</script>
+<% end %>
+
+<%= content_for :header do %>
+<% end %>
+
+<%= content_for :main_content do %>
+
+
+    <p>
+      <b>Name:</b>
+      <%= @student_group.name %>
+    </p>
+
+
+    <p>
+      <b>Facilitator group:</b>
+      <%= @student_group.facilitator_group_id %>
+    </p>
+
+
+
+<% end %>
+<br/>
+<br/>
+<%= content_for :navigation do %>
+<% end %>
+
+<%= content_for :extra do %>
+<%= link_to image_tag(icon("edit"),:size=>"100x100"), edit_student_group_path(@student_group), :title=>'Edit' %>
+<%= link_to image_tag(icon("back"),:size=>"100x100"), student_groups_path, :title=>'Back' %>
+    <%= link_to "Manage Students",new_student_group_user_path(:student_group_id=>@student_group.id) %>
+<% end %>
+
+<%= content_for :footer do %>
+<% end %>

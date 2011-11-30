@@ -1,0 +1,62 @@
+<%= content_for :head do %>
+    <script type="text/javascript">
+        $(function() {
+        });
+    </script>
+<% end %>
+
+<%= content_for :header do %>
+    <h1>Listing portfolio_allocations</h1>
+<% end %>
+
+<%= content_for :main_content do %>
+    <table>
+      <tr>
+
+        <th>Player</th>
+
+        <th>Min allocation</th>
+
+        <th>Max allocation</th>
+
+        <th>Round</th>
+
+        <th>Investment type</th>
+
+        <th></th>
+      </tr>
+
+      <% @portfolio_allocations.each do |portfolio_allocation| %>
+          <tr>
+
+            <td><%= portfolio_allocation.player_id %></td>
+
+            <td><%= portfolio_allocation.min_allocation %></td>
+
+            <td><%= portfolio_allocation.max_allocation %></td>
+
+            <td><%= portfolio_allocation.round_id %></td>
+
+            <td><%= portfolio_allocation.investment_type_id %></td>
+
+            <td>
+              <%= link_to image_tag(icon("show"), :size=>"64x64"), portfolio_allocation, :title=>'Show' %>
+              <%= link_to image_tag(icon("edit"), :size=>"64x64"), edit_portfolio_allocation_path(portfolio_allocation), :title=>'Edit' %>
+
+            </td>
+          </tr>
+      <% end %>
+    </table>
+<% end %>
+
+<br/>
+<%= content_for :navigation do %>
+<% end %>
+<%= content_for :extra do %>
+
+        <%= link_to image_tag('new_icon.png', :size=>"100x100"), new_portfolio_allocation_path(:player_id=>@player.id), :title=>"Add a portfolio_allocation" %>
+
+<% end %>
+<%= content_for :footer do %>
+<% end %>
+

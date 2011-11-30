@@ -1,0 +1,40 @@
+<%= content_for :head do %>
+<script type="text/javascript">
+    $(function() {
+    });
+</script>
+<% end %>
+
+<%= content_for :main_content do %>
+
+<%= form_for(@player_client) do |f| %>
+<% if @player_client.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@player_client.errors.count, "error") %> prohibited this player_client
+    from being saved:</h2>
+
+  <ul>
+    <% @player_client.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+    <%= f.label :player_id %><br/>
+    <%= f.number_field :player_id %>
+    <br/><br/>
+
+    <%= f.label :client_id %><br/>
+    <%= f.number_field :client_id %>
+    <br/><br/>
+
+<p><%= f.submit %></p>
+<% end %>
+<% end %>
+
+<%= content_for :navigation do %>
+<% end %>
+<%= content_for :footer do %>
+<% end %>

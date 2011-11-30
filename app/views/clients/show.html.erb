@@ -1,0 +1,81 @@
+<%= content_for :head do %>
+<script type="text/javascript">
+    $(function() {
+    });
+</script>
+<% end %>
+
+<%= content_for :header do %>
+<% end %>
+
+<%= content_for :main_content do %>
+
+
+    <p>
+      <b>Return focus:</b>
+      <%= @client.return_focus %>
+    </p>
+
+
+    <p>
+      <b>Risk focus:</b>
+      <%= @client.risk_focus %>
+    </p>
+
+
+    <p>
+      <b>Tolerance:</b>
+      <%= @client.tolerance %>
+    </p>
+
+
+    <p>
+      <b>Outlook:</b>
+      <%= @client.outlook %>
+    </p>
+
+
+    <p>
+      <b>Diversification intent:</b>
+      <%= @client.diversification_intent %>
+    </p>
+
+
+    <p>
+      <b>Proportion invested:</b>
+      <%= @client.proportion_invested %>
+    </p>
+
+
+    <p>
+      <b>Wealth growth rate:</b>
+      <%= @client.wealth_growth_rate %>
+    </p>
+
+
+    <p>
+      <b>Fee sensitivity:</b>
+      <%= @client.fee_sensitivity %>
+    </p>
+
+
+    <p>
+      <b>Profit sharing sensitivity:</b>
+      <%= @client.profit_sharing_sensitivity %>
+    </p>
+
+
+
+<% end %>
+<br/>
+<br/>
+<%= content_for :navigation do %>
+<% end %>
+
+<%= content_for :extra do %>
+<%= link_to image_tag(icon("edit"),:size=>"100x100"), edit_client_path(@client), :title=>'Edit' %>
+<%= link_to image_tag(icon("back"),:size=>"100x100"), clients_path, :title=>'Back' %>
+<% end %>
+
+<%= content_for :footer do %>
+<% end %>

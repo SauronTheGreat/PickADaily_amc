@@ -1,0 +1,48 @@
+<%= content_for :head do %>
+<script type="text/javascript">
+    $(function() {
+    });
+</script>
+<% end %>
+
+<%= content_for :main_content do %>
+
+<%= form_for(@round_stock_constant) do |f| %>
+<% if @round_stock_constant.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@round_stock_constant.errors.count, "error") %> prohibited this round_stock_constant
+    from being saved:</h2>
+
+  <ul>
+    <% @round_stock_constant.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+    <%= f.label :constant_id %><br/>
+    <%= f.number_field :constant_id %>
+    <br/><br/>
+
+    <%= f.label :round_id %><br/>
+    <%= f.number_field :round_id %>
+    <br/><br/>
+
+    <%= f.label :month_id %><br/>
+    <%= f.number_field :month_id %>
+    <br/><br/>
+
+    <%= f.label :amount %><br/>
+    <%= f.text_field :amount %>
+    <br/><br/>
+
+<p><%= f.submit %></p>
+<% end %>
+<% end %>
+
+<%= content_for :navigation do %>
+<% end %>
+<%= content_for :footer do %>
+<% end %>

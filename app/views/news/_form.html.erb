@@ -1,0 +1,60 @@
+<%= content_for :head do %>
+<script type="text/javascript">
+    $(function() {
+    });
+</script>
+<% end %>
+
+<%= content_for :main_content do %>
+
+<%= form_for(@news) do |f| %>
+<% if @news.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@news.errors.count, "error") %> prohibited this news
+    from being saved:</h2>
+
+  <ul>
+    <% @news.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+    <%= f.label :description %><br/>
+    <%= f.text_area :description %>
+    <br/><br/>
+
+    <%= f.label :impact_on_economic_growth %><br/>
+    <%= f.select :impact_on_economic_growth ,ImpactValue.all.collect{|impact|[impact.name,impact.id]}   %>
+    <br/><br/>
+
+    <%= f.label :impact_on_equity %><br/>
+    <%= f.select :impact_on_equity,ImpactValue.all.collect{|impact|[impact.name,impact.id]} %>
+    <br/><br/>
+
+    <%= f.label :impact_on_sector %><br/>
+    <%= f.select :impact_on_sector,ImpactValue.all.collect{|impact|[impact.name,impact.id]} %>
+    <br/><br/>
+
+    <%= f.label :impact_on_company %><br/>
+    <%= f.select :impact_on_company,ImpactValue.all.collect{|impact|[impact.name,impact.id]} %>
+    <br/><br/>
+
+    <%= f.label :impact_on_gold %><br/>
+    <%= f.select :impact_on_gold ,ImpactValue.all.collect{|impact|[impact.name,impact.id]}%>
+    <br/><br/>
+
+    <%= f.label :impact_on_debt %><br/>
+    <%= f.select :impact_on_debt,ImpactValue.all.collect{|impact|[impact.name,impact.id]} %>
+    <br/><br/>
+
+<p><%= f.submit %></p>
+<% end %>
+<% end %>
+
+<%= content_for :navigation do %>
+<% end %>
+<%= content_for :footer do %>
+<% end %>

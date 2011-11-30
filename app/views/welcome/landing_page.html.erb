@@ -1,0 +1,83 @@
+<%= content_for(:main_content) do %>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    Welcome to the Landing Page
+
+    <% if user_signed_in? %>
+        <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+        <% if current_user.super_admin %>
+
+            <p>You have signed in as superadmin</p>
+            <!--super admin view-->
+            <%= link_to "CRUD constants", new_constant_path %>  <br>
+            <%= link_to "CRUD Companies", new_company_path %>  <br>
+
+
+
+
+
+
+
+        <% elsif current_user.admin %>
+            <p>You have signed in as admin</p>
+            <!--admin view-->
+
+            <%= link_to "Upload Student List", new_import_path %> <br>
+            <%= link_to "CRUD news", new_news_path %> <br>
+
+
+
+
+        <% elsif current_user.facilitator %>
+            <p>You have signed in as facilitator</p>
+            <!--professsor view-->
+
+            <%= link_to "Add Facilitator Group", new_facilitator_group_path %>  <br>
+            <%= link_to "Create Simulation", new_simulation_path %>
+
+
+
+
+
+        <% elsif current_user.student %>
+            <p>You have signed in as student</p>
+            <!--student view-->
+            <p>There are simulations assigned to you...</p>
+
+            <ul>
+              <% @simulations.each_with_index do |simulation, index| %>
+                  <% if simulation.initiated? %>
+                      <% @active_round=ActiveRound.find_by_simulation_id(simulation.id).round_id %>
+                      <li><%= simulation.name %> <%= link_to "Play", player_decision_page_path(:player_id=> @players[index].id) %>
+                  <% end %>
+
+
+                  </ul>
+
+              <% end %>
+
+
+
+
+
+
+
+
+        <% else %>
+
+            <p>You have signed in as guest</p>
+
+        <% end %>
+    <% end %>
+
+
+
+
+
+
+
+<% end %>

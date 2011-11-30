@@ -1,0 +1,52 @@
+<%= content_for :head do %>
+<script type="text/javascript">
+    $(function() {
+    });
+</script>
+<% end %>
+
+<%= content_for :header do %>
+<h1>Listing players</h1>
+<% end %>
+
+<%= content_for :main_content do %>
+<table>
+  <tr>
+
+    <th>Student group user</th>
+
+    <th>Simulation</th>
+
+    <th>Played</th>
+
+    <th></th>
+  </tr>
+
+<% @players.each do |player| %>
+  <tr>
+
+    <td><%= player.student_group_user_id %></td>
+
+    <td><%= player.simulation_id %></td>
+
+    <td><%= player.played %></td>
+
+    <td>
+    <%= link_to image_tag(icon("show"),:size=>"64x64"), player, :title=>'Show' %>
+    <%= link_to image_tag(icon("edit"),:size=>"64x64"), edit_player_path(player), :title=>'Edit' %>
+    <%= link_to image_tag(icon("delete"),:size=>"64x64"), player, confirm: 'Are you sure?', method: :delete, :title=>'Delete' %>
+    </td>
+  </tr>
+<% end %>
+</table>
+<% end %>
+
+<br />
+<%= content_for :navigation do %>
+<% end %>
+<%= content_for :extra do %>
+<%= link_to image_tag('new_icon.png',:size=>"100x100"), new_player_path, :title=>"Add a player" %>
+<% end %>
+<%= content_for :footer do %>
+<% end %>
+

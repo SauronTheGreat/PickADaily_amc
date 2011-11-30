@@ -1,0 +1,68 @@
+<%= content_for :head do %>
+<script type="text/javascript">
+    $(function() {
+    });
+</script>
+<% end %>
+
+<%= content_for :main_content do %>
+
+<%= form_for(@client) do |f| %>
+<% if @client.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@client.errors.count, "error") %> prohibited this client
+    from being saved:</h2>
+
+  <ul>
+    <% @client.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+    <%= f.label :return_focus %><br/>
+    <%= f.number_field :return_focus %>
+    <br/><br/>
+
+    <%= f.label :risk_focus %><br/>
+    <%= f.number_field :risk_focus %>
+    <br/><br/>
+
+    <%= f.label :tolerance %><br/>
+    <%= f.number_field :tolerance %>
+    <br/><br/>
+
+    <%= f.label :outlook %><br/>
+    <%= f.check_box :outlook %>
+    <br/><br/>
+
+    <%= f.label :diversification_intent %><br/>
+    <%= f.check_box :diversification_intent %>
+    <br/><br/>
+
+    <%= f.label :proportion_invested %><br/>
+    <%= f.text_field :proportion_invested %>
+    <br/><br/>
+
+    <%= f.label :wealth_growth_rate %><br/>
+    <%= f.text_field :wealth_growth_rate %>
+    <br/><br/>
+
+    <%= f.label :fee_sensitivity %><br/>
+    <%= f.text_field :fee_sensitivity %>
+    <br/><br/>
+
+    <%= f.label :profit_sharing_sensitivity %><br/>
+    <%= f.number_field :profit_sharing_sensitivity %>
+    <br/><br/>
+
+<p><%= f.submit %></p>
+<% end %>
+<% end %>
+
+<%= content_for :navigation do %>
+<% end %>
+<%= content_for :footer do %>
+<% end %>

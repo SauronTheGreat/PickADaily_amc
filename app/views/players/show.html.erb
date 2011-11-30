@@ -1,0 +1,45 @@
+<%= content_for :head do %>
+<script type="text/javascript">
+    $(function() {
+    });
+</script>
+<% end %>
+
+<%= content_for :header do %>
+<% end %>
+
+<%= content_for :main_content do %>
+
+
+    <p>
+      <b>Student group user:</b>
+      <%= @player.student_group_user_id %>
+    </p>
+
+
+    <p>
+      <b>Simulation:</b>
+      <%= @player.simulation_id %>
+    </p>
+
+
+    <p>
+      <b>Played:</b>
+      <%= @player.played %>
+    </p>
+
+
+
+<% end %>
+<br/>
+<br/>
+<%= content_for :navigation do %>
+<% end %>
+
+<%= content_for :extra do %>
+<%= link_to image_tag(icon("edit"),:size=>"100x100"), edit_player_path(@player), :title=>'Edit' %>
+<%= link_to image_tag(icon("back"),:size=>"100x100"), players_path, :title=>'Back' %>
+<% end %>
+
+<%= content_for :footer do %>
+<% end %>

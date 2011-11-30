@@ -1,0 +1,52 @@
+<%= content_for :head do %>
+<script type="text/javascript">
+    $(function() {
+    });
+</script>
+<% end %>
+
+<%= content_for :header do %>
+<h1>Listing economic_parameter_values</h1>
+<% end %>
+
+<%= content_for :main_content do %>
+<table>
+  <tr>
+
+    <th>Economic parameter</th>
+
+    <th>Value</th>
+
+    <th>Round</th>
+
+    <th></th>
+  </tr>
+
+<% @economic_parameter_values.each do |economic_parameter_value| %>
+  <tr>
+
+    <td><%= economic_parameter_value.economic_parameter_id %></td>
+
+    <td><%= economic_parameter_value.value %></td>
+
+    <td><%= economic_parameter_value.round_id %></td>
+
+    <td>
+    <%= link_to image_tag(icon("show"),:size=>"64x64"), economic_parameter_value, :title=>'Show' %>
+    <%= link_to image_tag(icon("edit"),:size=>"64x64"), edit_economic_parameter_value_path(economic_parameter_value), :title=>'Edit' %>
+    <%= link_to image_tag(icon("delete"),:size=>"64x64"), economic_parameter_value, confirm: 'Are you sure?', method: :delete, :title=>'Delete' %>
+    </td>
+  </tr>
+<% end %>
+</table>
+<% end %>
+
+<br />
+<%= content_for :navigation do %>
+<% end %>
+<%= content_for :extra do %>
+<%= link_to image_tag('new_icon.png',:size=>"100x100"), new_economic_parameter_value_path, :title=>"Add a economic_parameter_value" %>
+<% end %>
+<%= content_for :footer do %>
+<% end %>
+

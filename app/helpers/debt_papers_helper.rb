@@ -1,0 +1,2 @@
+module DebtPapersHelper
+end

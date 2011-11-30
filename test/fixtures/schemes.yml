@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  entry_load: 1
+  exit_load: 1
+  commission_paid: 1.5
+
+two:
+  name: MyString
+  entry_load: 1
+  exit_load: 1
+  commission_paid: 1.5

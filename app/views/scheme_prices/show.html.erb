@@ -1,0 +1,51 @@
+<%= content_for :head do %>
+<script type="text/javascript">
+    $(function() {
+    });
+</script>
+<% end %>
+
+<%= content_for :header do %>
+<% end %>
+
+<%= content_for :main_content do %>
+
+
+    <p>
+      <b>Round:</b>
+      <%= @scheme_price.round_id %>
+    </p>
+
+
+    <p>
+      <b>Scheme:</b>
+      <%= @scheme_price.scheme_id %>
+    </p>
+
+
+    <p>
+      <b>Price date:</b>
+      <%= @scheme_price.price_date %>
+    </p>
+
+
+    <p>
+      <b>Price:</b>
+      <%= @scheme_price.price %>
+    </p>
+
+
+
+<% end %>
+<br/>
+<br/>
+<%= content_for :navigation do %>
+<% end %>
+
+<%= content_for :extra do %>
+<%= link_to image_tag(icon("edit"),:size=>"100x100"), edit_scheme_price_path(@scheme_price), :title=>'Edit' %>
+<%= link_to image_tag(icon("back"),:size=>"100x100"), scheme_prices_path, :title=>'Back' %>
+<% end %>
+
+<%= content_for :footer do %>
+<% end %>

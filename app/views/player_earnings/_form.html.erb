@@ -1,0 +1,52 @@
+<%= content_for :head do %>
+<script type="text/javascript">
+    $(function() {
+    });
+</script>
+<% end %>
+
+<%= content_for :main_content do %>
+
+<%= form_for(@player_earning) do |f| %>
+<% if @player_earning.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@player_earning.errors.count, "error") %> prohibited this player_earning
+    from being saved:</h2>
+
+  <ul>
+    <% @player_earning.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+    <%= f.label :round_id %><br/>
+    <%= f.number_field :round_id %>
+    <br/><br/>
+
+    <%= f.label :player_id %><br/>
+    <%= f.number_field :player_id %>
+    <br/><br/>
+
+    <%= f.label :commissions %><br/>
+    <%= f.number_field :commissions %>
+    <br/><br/>
+
+    <%= f.label :fine %><br/>
+    <%= f.number_field :fine %>
+    <br/><br/>
+
+    <%= f.label :income %><br/>
+    <%= f.number_field :income %>
+    <br/><br/>
+
+<p><%= f.submit %></p>
+<% end %>
+<% end %>
+
+<%= content_for :navigation do %>
+<% end %>
+<%= content_for :footer do %>
+<% end %>

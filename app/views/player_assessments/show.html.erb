@@ -1,0 +1,69 @@
+<%= content_for :head do %>
+<script type="text/javascript">
+    $(function() {
+    });
+</script>
+<% end %>
+
+<%= content_for :header do %>
+<% end %>
+
+<%= content_for :main_content do %>
+
+
+    <p>
+      <b>Player:</b>
+      <%= @player_assessment.player_id %>
+    </p>
+
+
+    <p>
+      <b>Return risk ratio:</b>
+      <%= @player_assessment.return_risk_ratio %>
+    </p>
+
+
+    <p>
+      <b>Promised vs actual return:</b>
+      <%= @player_assessment.promised_vs_actual_return %>
+    </p>
+
+
+    <p>
+      <b>Return:</b>
+      <%= @player_assessment.return %>
+    </p>
+
+
+    <p>
+      <b>Deviation from philosophy:</b>
+      <%= @player_assessment.deviation_from_philosophy %>
+    </p>
+
+
+    <p>
+      <b>Fees vs return:</b>
+      <%= @player_assessment.fees_vs_return %>
+    </p>
+
+
+    <p>
+      <b>Round:</b>
+      <%= @player_assessment.round_id %>
+    </p>
+
+
+
+<% end %>
+<br/>
+<br/>
+<%= content_for :navigation do %>
+<% end %>
+
+<%= content_for :extra do %>
+<%= link_to image_tag(icon("edit"),:size=>"100x100"), edit_player_assessment_path(@player_assessment), :title=>'Edit' %>
+<%= link_to image_tag(icon("back"),:size=>"100x100"), player_assessments_path, :title=>'Back' %>
+<% end %>
+
+<%= content_for :footer do %>
+<% end %>

@@ -1,0 +1,2 @@
+module GoldPricesHelper
+end

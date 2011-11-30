@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  return_focus: 1
+  risk_focus: 1
+  tolerance: 1
+  outlook: false
+  diversification_intent: false
+  proportion_invested: 1.5
+  wealth_growth_rate: 1.5
+  fee_sensitivity: 1.5
+  profit_sharing_sensitivity: 1
+
+two:
+  return_focus: 1
+  risk_focus: 1
+  tolerance: 1
+  outlook: false
+  diversification_intent: false
+  proportion_invested: 1.5
+  wealth_growth_rate: 1.5
+  fee_sensitivity: 1.5
+  profit_sharing_sensitivity: 1

@@ -1,0 +1,72 @@
+<%= content_for :head do %>
+<script type="text/javascript">
+    $(function() {
+    });
+</script>
+<% end %>
+
+<%= content_for :main_content do %>
+
+<%= form_for(@company_financial) do |f| %>
+<% if @company_financial.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@company_financial.errors.count, "error") %> prohibited this company_financial
+    from being saved:</h2>
+
+  <ul>
+    <% @company_financial.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+    <%= f.label :company_id %><br/>
+    <%= f.number_field :company_id %>
+    <br/><br/>
+
+    <%= f.label :financial_year %><br/>
+    <%= f.number_field :financial_year %>
+    <br/><br/>
+
+    <%= f.label :book_value %><br/>
+    <%= f.number_field :book_value %>
+    <br/><br/>
+
+    <%= f.label :ev_ebitda %><br/>
+    <%= f.number_field :ev_ebitda %>
+    <br/><br/>
+
+    <%= f.label :gearing %><br/>
+    <%= f.number_field :gearing %>
+    <br/><br/>
+
+    <%= f.label :turnover %><br/>
+    <%= f.number_field :turnover %>
+    <br/><br/>
+
+    <%= f.label :profit %><br/>
+    <%= f.number_field :profit %>
+    <br/><br/>
+
+    <%= f.label :total_debt %><br/>
+    <%= f.number_field :total_debt %>
+    <br/><br/>
+
+    <%= f.label :debt_rating %><br/>
+    <%= f.number_field :debt_rating %>
+    <br/><br/>
+
+    <%= f.label :promoter_rating %><br/>
+    <%= f.number_field :promoter_rating %>
+    <br/><br/>
+
+<p><%= f.submit %></p>
+<% end %>
+<% end %>
+
+<%= content_for :navigation do %>
+<% end %>
+<%= content_for :footer do %>
+<% end %>

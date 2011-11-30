@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  company_id: 1
+  financial_year: 1
+  book_value: 1
+  ev_ebitda: 1
+  gearing: 1
+  turnover: 1
+  profit: 1
+  total_debt: 1
+  debt_rating: 1
+  promoter_rating: 1
+
+two:
+  company_id: 1
+  financial_year: 1
+  book_value: 1
+  ev_ebitda: 1
+  gearing: 1
+  turnover: 1
+  profit: 1
+  total_debt: 1
+  debt_rating: 1
+  promoter_rating: 1

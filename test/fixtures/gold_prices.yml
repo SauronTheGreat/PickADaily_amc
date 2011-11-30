@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  price_date: 2011-11-21
+  price: 1.5
+  round_id: 1
+
+two:
+  price_date: 2011-11-21
+  price: 1.5
+  round_id: 1

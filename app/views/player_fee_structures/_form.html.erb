@@ -1,0 +1,48 @@
+<%= content_for :head do %>
+<script type="text/javascript">
+    $(function() {
+    });
+</script>
+<% end %>
+
+<%= content_for :main_content do %>
+
+<%= form_for(@player_fee_structure) do |f| %>
+<% if @player_fee_structure.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@player_fee_structure.errors.count, "error") %> prohibited this player_fee_structure
+    from being saved:</h2>
+
+  <ul>
+    <% @player_fee_structure.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+
+    <%= f.hidden_field :round_id,:value=>@round.id %>
+
+
+
+    <%= f.hidden_field :player_id ,:value=>@player.id %>
+
+
+    <%= f.label :management_fee %><br/>
+    <%= f.text_field :management_fee %>
+    <br/><br/>
+
+    <%= f.label :carry_fee %><br/>
+    <%= f.text_field :carry_fee %>
+    <br/><br/>
+
+<p><%= f.submit %></p>
+<% end %>
+<% end %>
+
+<%= content_for :navigation do %>
+<% end %>
+<%= content_for :footer do %>
+<% end %>

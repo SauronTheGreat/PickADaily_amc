@@ -1,0 +1,39 @@
+<script type="text/javascript">
+    $(function() {
+        $('#navigation, #main_wrapper').equalHeightColumns();
+        $('#footer, #extra').equalHeightColumns();
+    });
+</script>
+
+<div id="header_wrapper" class="container_12">
+  <div id="header" class="grid_12">
+    <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    <% end %>
+    <%= yield(:header) %>
+  </div>
+
+  <div class="clear"></div>
+  <div id="navigation" class="grid_4">
+    <%= render '/layouts/Partials/navigation_vertical' %>
+    <%= yield(:navigation) %>
+  </div>
+
+  <div id="main_wrapper" class="grid_8 alpha">
+    <div id="content" class="grid_8">
+      <%= yield(:main_content) %>
+    </div>
+    <div class="grid_8">
+      <div id="extra" class="grid_4 alpha">
+        <%= yield(:extra) %>
+      </div>
+      <div id="footer" class="grid_4 omega">
+        <%= yield(:footer) %>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+
+
+

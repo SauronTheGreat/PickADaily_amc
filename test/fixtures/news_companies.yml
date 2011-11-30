@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  news_id: 1
+  company_id: 1
+
+two:
+  news_id: 1
+  company_id: 1

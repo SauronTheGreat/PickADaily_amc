@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  player_id: 1
+  return_risk_ratio: 1.5
+  promised_vs_actual_return: 1.5
+  return: 1.5
+  deviation_from_philosophy: 1.5
+  fees_vs_return: 1.5
+  round_id: 1
+
+two:
+  player_id: 1
+  return_risk_ratio: 1.5
+  promised_vs_actual_return: 1.5
+  return: 1.5
+  deviation_from_philosophy: 1.5
+  fees_vs_return: 1.5
+  round_id: 1

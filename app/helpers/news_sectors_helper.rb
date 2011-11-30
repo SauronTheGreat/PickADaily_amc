@@ -1,0 +1,2 @@
+module NewsSectorsHelper
+end

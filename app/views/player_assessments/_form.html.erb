@@ -1,0 +1,60 @@
+<%= content_for :head do %>
+<script type="text/javascript">
+    $(function() {
+    });
+</script>
+<% end %>
+
+<%= content_for :main_content do %>
+
+<%= form_for(@player_assessment) do |f| %>
+<% if @player_assessment.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@player_assessment.errors.count, "error") %> prohibited this player_assessment
+    from being saved:</h2>
+
+  <ul>
+    <% @player_assessment.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+    <%= f.label :player_id %><br/>
+    <%= f.number_field :player_id %>
+    <br/><br/>
+
+    <%= f.label :return_risk_ratio %><br/>
+    <%= f.text_field :return_risk_ratio %>
+    <br/><br/>
+
+    <%= f.label :promised_vs_actual_return %><br/>
+    <%= f.text_field :promised_vs_actual_return %>
+    <br/><br/>
+
+    <%= f.label :return %><br/>
+    <%= f.text_field :return %>
+    <br/><br/>
+
+    <%= f.label :deviation_from_philosophy %><br/>
+    <%= f.text_field :deviation_from_philosophy %>
+    <br/><br/>
+
+    <%= f.label :fees_vs_return %><br/>
+    <%= f.text_field :fees_vs_return %>
+    <br/><br/>
+
+    <%= f.label :round_id %><br/>
+    <%= f.number_field :round_id %>
+    <br/><br/>
+
+<p><%= f.submit %></p>
+<% end %>
+<% end %>
+
+<%= content_for :navigation do %>
+<% end %>
+<%= content_for :footer do %>
+<% end %>

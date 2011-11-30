@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  round_id: 1
+  news_id: 1
+  news_date: 2011-11-21
+
+two:
+  round_id: 1
+  news_id: 1
+  news_date: 2011-11-21

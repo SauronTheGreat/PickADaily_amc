@@ -1,0 +1,114 @@
+<%= content_for :head do %>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+        google.load('visualization', '1', {packages: ['corechart']});
+    </script>
+
+
+
+    <script type="text/javascript">
+
+        var number_of_times = 1;
+        var h;
+        var final_data = [];
+        for (var i = 0; i < 6; i++) {
+            final_data[i] = ['',0,0,0,0];
+        }
+        function drawVisualization(data) {
+
+            //   var name = data.pop();
+
+            // Populate the data table.
+            var dataTable = google.visualization.arrayToDataTable(data, true);
+
+            // Draw the chart.
+            var chart = new google.visualization.CandlestickChart(document.getElementById('current_panel'));
+            chart.draw(dataTable, {legend:'none', width:600, height:400,title:"Data for " });
+        }
+
+
+        function getCurrentData(company_id) {
+            $.getJSON("/current_stock_price?company_id=" + company_id + "&month_number=" + number_of_times, function(data) {
+                data.unshift("Jan");
+
+                final_data[(number_of_times - 1)] = data;
+                // alert(number_of_times);
+                number_of_times = number_of_times + 1;
+
+//                var dataTable = google.visualization.arrayToDataTable(final_data, true);
+//                // Draw the chart.
+//                var chart = new google.visualization.CandlestickChart(document.getElementById('current_panel'));
+//                chart.draw(dataTable, {legend:'none', width:600, height:400,title:"Data for " });
+
+
+                drawVisualization(final_data);
+
+
+            });
+            if (number_of_times > 6) {
+              alert(final_data[0]);
+                final_data = [];
+
+                for (var i = 0; i < 6; i++) {
+                    final_data[i] = ['',0,0,0,0];
+                }
+                //alert(final_data[0]);
+                number_of_times = 1;
+                window.clearInterval(h);
+            }
+
+
+        }
+
+
+        $(function() {
+
+
+            $("a").click(function() {
+
+                var company_id = $(this).attr("id");
+                var x = 'hello';
+
+
+                h = window.setInterval(function() {
+                    getCurrentData(company_id)
+                }, 1000);
+
+
+            });
+
+
+        });
+
+    </script>
+
+
+
+<% end %>
+
+
+<%= content_for :main_content do %>
+
+    <div id="navigation_panel" style="width: 20% ">
+      <% Company.all.each do |company| %>
+          <a href="#" id=<%= company.id %>> <%= company.name %><br></a>
+
+
+      <% end %>
+
+    </div>
+
+    <div id="current_panel" style="margin-left: 30%;margin-top: -50%;width: 35%">
+      This is main panel
+    </div>
+    <div id="historical_panel" style="margin-left: 30%;margin-top: -50%">
+      This is main panel
+    </div>
+
+
+
+
+
+
+<% end %>

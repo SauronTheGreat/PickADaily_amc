@@ -1,0 +1,52 @@
+<%= content_for :head do %>
+<script type="text/javascript">
+    $(function() {
+    });
+</script>
+<% end %>
+
+<%= content_for :main_content do %>
+
+<%= form_for(@portfolio_allocation) do |f| %>
+<% if @portfolio_allocation.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@portfolio_allocation.errors.count, "error") %> prohibited this portfolio_allocation
+    from being saved:</h2>
+
+  <ul>
+    <% @portfolio_allocation.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+
+    <%= f.hidden_field :player_id ,:value=>@player.id%>
+
+
+    <%= f.label :min_allocation %><br/>
+    <%= f.number_field :min_allocation %>
+    <br/><br/>
+
+    <%= f.label :max_allocation %><br/>
+    <%= f.number_field :max_allocation %>
+    <br/><br/>
+
+
+    <%= f.hidden_field :round_id ,:value=>@round.id%>
+
+
+    <%= f.label :investment_type_id %><br/>
+    <%= f.select :investment_type_id ,@possible_investment_types %>
+    <br/><br/>
+
+<p><%= f.submit %></p>
+<% end %>
+<% end %>
+
+<%= content_for :navigation do %>
+<% end %>
+<%= content_for :footer do %>
+<% end %>

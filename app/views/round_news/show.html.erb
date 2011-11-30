@@ -1,0 +1,45 @@
+<%= content_for :head do %>
+<script type="text/javascript">
+    $(function() {
+    });
+</script>
+<% end %>
+
+<%= content_for :header do %>
+<% end %>
+
+<%= content_for :main_content do %>
+
+
+    <p>
+      <b>Round:</b>
+      <%= @round_news.round_id %>
+    </p>
+
+
+    <p>
+      <b>News:</b>
+      <%= @round_news.news_id %>
+    </p>
+
+
+    <p>
+      <b>News date:</b>
+      <%= @round_news.news_date %>
+    </p>
+
+
+
+<% end %>
+<br/>
+<br/>
+<%= content_for :navigation do %>
+<% end %>
+
+<%= content_for :extra do %>
+<%= link_to image_tag(icon("edit"),:size=>"100x100"), edit_round_news_path(@round_news), :title=>'Edit' %>
+<%= link_to image_tag(icon("back"),:size=>"100x100"), round_news_index_path, :title=>'Back' %>
+<% end %>
+
+<%= content_for :footer do %>
+<% end %>

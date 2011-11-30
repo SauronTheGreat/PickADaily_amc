@@ -1,0 +1,87 @@
+<%= content_for :head do %>
+<script type="text/javascript">
+    $(function() {
+    });
+</script>
+<% end %>
+
+<%= content_for :header do %>
+<% end %>
+
+<%= content_for :main_content do %>
+
+
+    <p>
+      <b>Company:</b>
+      <%= @company_financial.company_id %>
+    </p>
+
+
+    <p>
+      <b>Financial year:</b>
+      <%= @company_financial.financial_year %>
+    </p>
+
+
+    <p>
+      <b>Book value:</b>
+      <%= @company_financial.book_value %>
+    </p>
+
+
+    <p>
+      <b>Ev ebitda:</b>
+      <%= @company_financial.ev_ebitda %>
+    </p>
+
+
+    <p>
+      <b>Gearing:</b>
+      <%= @company_financial.gearing %>
+    </p>
+
+
+    <p>
+      <b>Turnover:</b>
+      <%= @company_financial.turnover %>
+    </p>
+
+
+    <p>
+      <b>Profit:</b>
+      <%= @company_financial.profit %>
+    </p>
+
+
+    <p>
+      <b>Total debt:</b>
+      <%= @company_financial.total_debt %>
+    </p>
+
+
+    <p>
+      <b>Debt rating:</b>
+      <%= @company_financial.debt_rating %>
+    </p>
+
+
+    <p>
+      <b>Promoter rating:</b>
+      <%= @company_financial.promoter_rating %>
+    </p>
+
+
+
+<% end %>
+<br/>
+<br/>
+<%= content_for :navigation do %>
+<% end %>
+
+<%= content_for :extra do %>
+<%= link_to image_tag(icon("edit"),:size=>"100x100"), edit_company_financial_path(@company_financial), :title=>'Edit' %>
+<%= link_to image_tag(icon("back"),:size=>"100x100"), company_financials_path, :title=>'Back' %>
+<% end %>
+
+<%= content_for :footer do %>
+<% end %>

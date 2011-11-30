@@ -1,0 +1,57 @@
+<%= content_for :head do %>
+<script type="text/javascript">
+    $(function() {
+    });
+</script>
+<% end %>
+
+<%= content_for :header do %>
+<% end %>
+
+<%= content_for :main_content do %>
+
+
+    <p>
+      <b>Player:</b>
+      <%= @portfolio_allocation.player_id %>
+    </p>
+
+
+    <p>
+      <b>Min allocation:</b>
+      <%= @portfolio_allocation.min_allocation %>
+    </p>
+
+
+    <p>
+      <b>Max allocation:</b>
+      <%= @portfolio_allocation.max_allocation %>
+    </p>
+
+
+    <p>
+      <b>Round:</b>
+      <%= @portfolio_allocation.round_id %>
+    </p>
+
+
+    <p>
+      <b>Investment type:</b>
+      <%= @portfolio_allocation.investment_type_id %>
+    </p>
+
+
+
+<% end %>
+<br/>
+<br/>
+<%= content_for :navigation do %>
+<% end %>
+
+<%= content_for :extra do %>
+<%= link_to image_tag(icon("edit"),:size=>"100x100"), edit_portfolio_allocation_path(@portfolio_allocation,:player_id=>@player.id), :title=>'Edit' %>
+<%= link_to image_tag(icon("back"),:size=>"100x100"), portfolio_allocations_path(:player_id=>@player.id), :title=>'Back' %>
+<% end %>
+
+<%= content_for :footer do %>
+<% end %>

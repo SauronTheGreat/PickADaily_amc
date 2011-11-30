@@ -1,0 +1,51 @@
+<%= content_for :head do %>
+<script type="text/javascript">
+    $(function() {
+    });
+</script>
+<% end %>
+
+<%= content_for :header do %>
+<% end %>
+
+<%= content_for :main_content do %>
+
+
+    <p>
+      <b>Constant:</b>
+      <%= @round_stock_constant.constant_id %>
+    </p>
+
+
+    <p>
+      <b>Round:</b>
+      <%= @round_stock_constant.round_id %>
+    </p>
+
+
+    <p>
+      <b>Month:</b>
+      <%= @round_stock_constant.month_id %>
+    </p>
+
+
+    <p>
+      <b>Amount:</b>
+      <%= @round_stock_constant.amount %>
+    </p>
+
+
+
+<% end %>
+<br/>
+<br/>
+<%= content_for :navigation do %>
+<% end %>
+
+<%= content_for :extra do %>
+<%= link_to image_tag(icon("edit"),:size=>"100x100"), edit_round_stock_constant_path(@round_stock_constant), :title=>'Edit' %>
+<%= link_to image_tag(icon("back"),:size=>"100x100"), round_stock_constants_path, :title=>'Back' %>
+<% end %>
+
+<%= content_for :footer do %>
+<% end %>

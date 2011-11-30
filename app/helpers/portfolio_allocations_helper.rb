@@ -1,0 +1,2 @@
+module PortfolioAllocationsHelper
+end

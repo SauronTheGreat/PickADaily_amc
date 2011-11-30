@@ -1,0 +1,44 @@
+<%= content_for :head do %>
+<script type="text/javascript">
+    $(function() {
+    });
+</script>
+<% end %>
+
+<%= content_for :main_content do %>
+
+<%= form_for(@round_news) do |f| %>
+<% if @round_news.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@round_news.errors.count, "error") %> prohibited this round_news
+    from being saved:</h2>
+
+  <ul>
+    <% @round_news.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+    <%= f.label :round_id %><br/>
+    <%= f.number_field :round_id %>
+    <br/><br/>
+
+    <%= f.label :news_id %><br/>
+    <%= f.number_field :news_id %>
+    <br/><br/>
+
+    <%= f.label :news_date %><br/>
+    <%= f.date_select :news_date %>
+    <br/><br/>
+
+<p><%= f.submit %></p>
+<% end %>
+<% end %>
+
+<%= content_for :navigation do %>
+<% end %>
+<%= content_for :footer do %>
+<% end %>

@@ -1,0 +1,63 @@
+<%= content_for :head do %>
+<script type="text/javascript">
+    $(function() {
+    });
+</script>
+<% end %>
+
+<%= content_for :header do %>
+<% end %>
+
+<%= content_for :main_content do %>
+
+
+    <p>
+      <b>Company:</b>
+      <%= @debt_paper.company_id %>
+    </p>
+
+
+    <p>
+      <b>Name:</b>
+      <%= @debt_paper.name %>
+    </p>
+
+
+    <p>
+      <b>Amount:</b>
+      <%= @debt_paper.amount %>
+    </p>
+
+
+    <p>
+      <b>Tenure:</b>
+      <%= @debt_paper.tenure %>
+    </p>
+
+
+    <p>
+      <b>Rate of interest:</b>
+      <%= @debt_paper.rate_of_interest %>
+    </p>
+
+
+    <p>
+      <b>Lot size:</b>
+      <%= @debt_paper.lot_size %>
+    </p>
+
+
+
+<% end %>
+<br/>
+<br/>
+<%= content_for :navigation do %>
+<% end %>
+
+<%= content_for :extra do %>
+<%= link_to image_tag(icon("edit"),:size=>"100x100"), edit_debt_paper_path(@debt_paper), :title=>'Edit' %>
+<%= link_to image_tag(icon("back"),:size=>"100x100"), debt_papers_path, :title=>'Back' %>
+<% end %>
+
+<%= content_for :footer do %>
+<% end %>

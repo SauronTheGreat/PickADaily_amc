@@ -1,0 +1,72 @@
+<%= content_for :head do %>
+<script type="text/javascript">
+    $(function() {
+    });
+</script>
+<% end %>
+
+<%= content_for :header do %>
+<% end %>
+
+<%= content_for :main_content do %>
+
+
+    <p>
+      <b>Description:</b>
+      <%= @news.description %>
+    </p>
+
+
+    <p>
+      <b>Impact on economic growth:</b>
+      <%= @news.impact_on_economic_growth %>
+    </p>
+
+
+    <p>
+      <b>Impact on equity:</b>
+      <%= @news.impact_on_equity %>
+    </p>
+
+
+    <p>
+      <b>Impact on sector:</b>
+      <%= @news.impact_on_sector %>
+    </p>
+
+
+    <p>
+      <b>Impact on company:</b>
+      <%= @news.impact_on_company %>
+    </p>
+
+
+    <p>
+      <b>Impact on gold:</b>
+      <%= @news.impact_on_gold %>
+    </p>
+
+
+    <p>
+      <b>Impact on debt:</b>
+      <%= @news.impact_on_debt %>
+    </p>
+
+
+
+<% end %>
+<br/>
+<br/>
+<%= content_for :navigation do %>
+<% end %>
+
+<%= content_for :extra do %>
+<%= link_to image_tag(icon("edit"),:size=>"100x100"), edit_news_path(@news), :title=>'Edit' %>
+<%= link_to image_tag(icon("back"),:size=>"100x100"), news_index_path, :title=>'Back' %>
+ <%= link_to "Set Companies",new_news_company_path(:news_id=>@news.id) %>
+ <%= link_to "Set Sectors",new_news_sector_path(:news_id=>@news.id) %>
+
+<% end %>
+
+<%= content_for :footer do %>
+<% end %>

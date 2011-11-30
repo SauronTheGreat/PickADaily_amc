@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  player_id: 1
+  expected_return: 1.5
+  max_risk: 1
+  round_id: 1
+  portfolio_wealth_approach_id: 1
+
+two:
+  player_id: 1
+  expected_return: 1.5
+  max_risk: 1
+  round_id: 1
+  portfolio_wealth_approach_id: 1
